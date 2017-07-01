@@ -1,4 +1,11 @@
 def quicksort_xtra_mem(alist):
+    """
+    Sort an array of integers using quicksort algorithm
+    :param alist: a list of integers
+    :type alist: list
+    :return: sorted array
+    :rtype: list
+    """
     if alist:
         pivot = alist[0]
         below = [x for x in alist[1:] if x < pivot]
@@ -10,6 +17,17 @@ def quicksort_xtra_mem(alist):
 
 
 def partition(array, begin, end):
+    """
+    Partition method to return an appropriate pivot to be used to split the array
+
+    :param array: the array to be sorted
+    :param begin: starting point
+    :param end: ending point
+    :type begin: integer
+    :type end: integer
+    :return: the pivot
+    :rtype: integer
+    """
     pivot = begin
     for i in xrange(begin + 1, end + 1):
         if array[i] <= array[begin]:
@@ -20,6 +38,14 @@ def partition(array, begin, end):
 
 
 def quicksort(array, begin, end):
+    """
+    Implementation of quicksort. Needs the help of a partition function.
+
+    :param array: A list of integers
+    :param begin: Starting point
+    :param end: Ending point
+    :return: Sorted rray
+    """
     if begin < end:
         pivot = partition(array, begin, end)
         quicksort(array, begin, pivot - 1)
