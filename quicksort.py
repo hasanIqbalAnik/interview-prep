@@ -1,6 +1,7 @@
 def quicksort_xtra_mem(alist):
     """
     Sort an array of integers using quicksort algorithm
+
     :param alist: a list of integers
     :type alist: list
     :return: sorted array
