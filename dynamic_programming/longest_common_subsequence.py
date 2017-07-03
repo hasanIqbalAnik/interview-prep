@@ -4,6 +4,7 @@ def lcs_dp(s1, s2):
     should be changed a little.
 
     time complexity of the native implementation is O(2^n). The DP approach using memoization is O(m*n)
+    space complexity is O(m*n)
 
     example: s1 = AGTAB, s2 = GXTXAYB, then lcs(s1, s2) = 'GTAB'
 
@@ -60,3 +61,4 @@ def lcs_recursive(xstr, ystr):
 
 print lcs_recursive('AGTAB', 'GXTXAYB')
 print lcs_dp('AGTAB', 'GXTXAYB')
+# output 'GTAB', 4
