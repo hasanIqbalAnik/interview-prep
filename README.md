@@ -10,12 +10,12 @@
 * Breadth First Search
 
 #### String Operations
-*All Possible Permutation
-*Check Palindrome
-*Check a string is anagram of another
-*Knuth-Morris-Pratt substring search
-*Reversing a string
-*Reversing a string in batches of k characters
+* All Possible Permutation
+* Check Palindrome
+* Check a string is anagram of another
+* Knuth-Morris-Pratt substring search
+* Reversing a string
+* Reversing a string in batches of k characters
 
 #### Dynamic Programming
 * 0/1 Knapsack Problem
