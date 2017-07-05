@@ -1,5 +1,5 @@
 """
-The following code finds all possible permutations in two different  methods.
+The following code finds all possible permutations in a recursive manner.
 The algorithm works as follows:
 1. if there is only one character in that string, then the permutation is itself. This is the base case.
 2. else, that character should precede the permutations of the remaining characters.
