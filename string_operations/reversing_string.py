@@ -1,3 +1,6 @@
+"""
+The extended slicing method is much faster than ''.join(reversed(string))
+"""
 def reverse_string(s):
     """
     Python doesn't have the facility to reverse a string in place.

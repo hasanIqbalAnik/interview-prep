@@ -47,13 +47,13 @@ def knuth_morris_pratt(s, pattern):
     many places we can shift to the right. If pattern 'abab' matches in the string and then a mismatch, then we can
     shift 2 places to the right.
 
+    Time Complexity: O(n), Space Complexity: O(pattern_length)
     reference linK: http://www.keithschwarz.com/interesting/code/knuth-morris-pratt/KnuthMorrisPratt.python.html
 
     :param s:
     :param subs:
     :return:
     """
-    text_length = len(s)
     pat_length = len(pattern)
     pref_table = generate_prefix_table(pattern)
 
