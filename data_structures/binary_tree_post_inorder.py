@@ -7,25 +7,22 @@ The idea of reconstructing a binary tree from the post and inorder traversal wor
 5. Use recursion on these right and left subtree and assign them to the root.
 
 
+Instead of using a global variable to store the pIndex, we can use the function variable itself.
+
+reference: http://www.geeksforgeeks.org/construct-a-binary-tree-from-postorder-and-inorder/
+
 """
 
-
-# todo replace global variable pIndex with some sort of a parameter
-
-class Node:
-    def __init__(self, val):
-        self.val = val
-        self.left, self.right = None, None
+from node import Node, inorder, preorder
 
 
 def binary_tree_in_post(inarr, instart, inend, postarr):
-    global pIndex
     if instart > inend:
         return
     if len(inarr) == 0:
         return
-    nd = Node(postarr[pIndex])
-    pIndex -= 1
+    nd = Node(postarr[binary_tree_in_post.pIndex])
+    binary_tree_in_post.pIndex -= 1
     if instart == inend:
         return nd
     index = instart  # to look for the index of the root in the inorder array
@@ -39,26 +36,10 @@ def binary_tree_in_post(inarr, instart, inend, postarr):
     return nd
 
 
-def inorder(root, result):
-    if root:
-        inorder(root.left, result)
-        result.append(root.val)
-        inorder(root.right, result)
-    return result
-
-
-def postorder(root, result):
-    if root:
-        postorder(root.left, result)
-        postorder(root.right, result)
-        result.append(root.val)
-    return result
-
-
 parr = [8, 4, 5, 2, 6, 7, 3, 1]
 iarr = [4, 8, 2, 5, 1, 6, 3, 7]
-pIndex = len(parr) - 1
+binary_tree_in_post.pIndex = len(parr) - 1
 
 n = binary_tree_in_post(iarr, 0, len(iarr) - 1, parr)
-assert parr == postorder(n, [])
+assert parr == preorder(n, [])
 assert iarr == inorder(n, [])
