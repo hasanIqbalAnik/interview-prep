@@ -23,3 +23,7 @@
 * Longest Increasing Subsequence
 * Maximum Subarray Problem
 * Subset Sum Problem
+
+#### Data Structures
+* Construct Binary Tree from inorder and preorder traversal
+* Construct Binary Tree from inorder and postorder traversal
