@@ -3,6 +3,10 @@ class Node:
         self.val = val
         self.left, self.right = None, None
 
+    def __str__(self):
+        return str(self.val)
+
+
 def inorder(root, result):
     if root:
         inorder(root.left, result)
