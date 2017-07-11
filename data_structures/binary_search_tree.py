@@ -62,7 +62,7 @@ def insert_in_bst(root, val):
     return root
 
 
-def deletion_in_bst(n, val, parent=None):
+def deletion_in_bst(n, val):
     """
     Compared to the other two methods, deletion is a little trickier. There are three scenarios
     while deleting a node in bst:
@@ -117,5 +117,5 @@ def find_min_val_in_bst(root):
 
 a = [1, 2, 3, 4, 5, 6, 7, 8]
 r = construct_bst_from_sorted_array(a, 0, len(a) - 1)
-deletion_in_bst(r, 2)
+deletion_in_bst(r, 7)
 print preorder(r, [])

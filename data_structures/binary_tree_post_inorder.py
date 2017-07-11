@@ -21,7 +21,8 @@ def binary_tree_in_post(inarr, instart, inend, postarr):
         return
     if len(inarr) == 0:
         return
-    nd = Node(postarr[binary_tree_in_post.pIndex])
+    nd = Node(postarr[binary_tree_in_post.pIndex])  # using the methods scope to store the pIndex variable so that it
+    #  remains the same between recursions
     binary_tree_in_post.pIndex -= 1
     if instart == inend:
         return nd
