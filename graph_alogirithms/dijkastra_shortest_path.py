@@ -11,6 +11,8 @@ we will try to compute the shortest path that exists among all routes.
 
 The time complexity of the algorithm is: O(|n| * |k|)
 
+This complexity can be reduced to
+
 """
 from graph import adj_mtx, AP
 
