@@ -27,3 +27,9 @@
 #### Data Structures
 * Construct Binary Tree from inorder and preorder traversal
 * Construct Binary Tree from inorder and postorder traversal
+* Construction and operation on Binary Search Tree
+* Binary Tree construction
+
+#### Graph Algorithms
+* Dijkastra's single source shortest path algorithm
+* Prim-Jarnik Minimum Spanning Tree
