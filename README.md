@@ -33,3 +33,5 @@
 #### Graph Algorithms
 * Dijkastra's single source shortest path algorithm
 * Prim-Jarnik Minimum Spanning Tree
+* Cycle detection in directed graph
+* Topological sort
