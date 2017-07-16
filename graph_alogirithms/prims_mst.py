@@ -22,21 +22,21 @@ import heapq as hq
 
 
 # todo correct runtime analysis
-lv, visited, h, parent = float('inf'), {}, [], {}  # O(n)
+lv, visited, heap, parent = float('inf'), {}, [], {}  # O(n)
 
 
 def prims_mst(adj_matrix, src):
-    hq.heappush(h, (0, (src, None)))  # O(logn)
+    hq.heappush(heap, (0, (src, None)))  # O(logn)
     curr_dist = {item.value: lv if item.value != src else 0 for item in AP}
     parent[src] = None
 
-    while len(h) != 0:
-        curr_nd = hq.heappop(h)[1][0]  # first element of the tuple is the value, second is the node  # O(1)
+    while len(heap) != 0:
+        curr_nd = hq.heappop(heap)[1][0]  # first element of the tuple is the value, second is the node  # O(1)
         visited[curr_nd] = True  # O(1)
         for nd, dst in enumerate(adj_matrix[src]):  # O(n) -> n is the number of nodes
             if nd not in visited and curr_dist[nd] > curr_dist[curr_nd] + adj_matrix[curr_nd][nd]:
                 curr_dist[nd] = curr_dist[curr_nd] + adj_matrix[curr_nd][nd]
-                hq.heappush(h, (curr_dist[nd], (nd, curr_nd)))  # O(logn)
+                hq.heappush(heap, (curr_dist[nd], (nd, curr_nd)))  # O(logn)
                 parent[nd] = curr_nd
 
 prims_mst(adj_mtx, 0)
