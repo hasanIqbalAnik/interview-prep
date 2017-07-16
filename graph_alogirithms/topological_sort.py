@@ -34,7 +34,7 @@ def topological_sort(g):
     for k, v in indegrees.iteritems():  # O(V)
         if v == 0:
             q.append(k)
-    while q:
+    while q:  # O(V+E) because each vertex and edge is being read at most once
         current_node = q.popleft()
         result.append(current_node)
         neighbors = g.get_connections(current_node)
