@@ -29,9 +29,11 @@
 * Construct Binary Tree from inorder and postorder traversal
 * Construction and operation on Binary Search Tree
 * Binary Tree construction
+* Max Heap construction, insertion and extraction
 
 #### Graph Algorithms
 * Dijkastra's single source shortest path algorithm
 * Prim-Jarnik Minimum Spanning Tree
 * Cycle detection in directed graph
 * Topological sort
+
