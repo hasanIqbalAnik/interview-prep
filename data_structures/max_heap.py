@@ -27,10 +27,10 @@ algorithm for deletion in a heap:
 
 this is essentially the heapify down method.
 
-
 there are some other helper methods which can also be declared as statics, like get parent,
 get children or their indices.
 
+reference link: https://www.youtube.com/watch?v=t0Cq6tVNRBA
 """
 
 
