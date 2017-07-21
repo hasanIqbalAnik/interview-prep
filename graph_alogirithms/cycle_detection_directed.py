@@ -22,13 +22,11 @@ def detect_cycle_util(root_node, airport_graph, visited, total_length=None):
 
 
 def contains_cycle(airports, init_queue):
-    flag = False
     while init_queue:
         root = init_queue.popleft()
-        flag = detect_cycle_util(root, airports, {}, len(airports.get_vertices()))
-
-    return flag
-
+        if detect_cycle_util(root, airports, {}, len(airports.get_vertices())):
+            return True
+    return False
 
 airports = Graph(adj_lst_directed, directed=True)
 init_queue = deque(airports.get_vertices())
