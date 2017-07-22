@@ -53,7 +53,6 @@ if __name__ == '__main__':
     map(st.push, a)
     print st.pop()
     print st.pop()
-    print st.pop()
 
     st.push(100)
     print st.peek()
