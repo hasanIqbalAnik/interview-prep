@@ -17,16 +17,6 @@ applications of linked list:
 -graphs, hash tables can be implemented using it
 """
 
-"""
-task 0: implement a stack using linked list
-task 1: reversing a linked list
-task 2: delete the middle of a linked list
-task 3: detect loop in linked list
-task 4: remove loop in linked list
-task 5: rotate a linked list
-"""
-
-
 class StackWithLinkedList:
     class _Node:
         def __init__(self, val, next):
