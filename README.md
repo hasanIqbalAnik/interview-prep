@@ -30,6 +30,13 @@
 * Construction and operation on Binary Search Tree
 * Binary Tree construction
 * Max Heap construction, insertion and extraction
+* Stack with Linked List
+* Linked List operations: 
+    * reversing a linked list
+    * delete the middle node 
+    * detect loop 
+    * remove loop 
+    * rotating
 
 #### Graph Algorithms
 * Dijkastra's single source shortest path algorithm

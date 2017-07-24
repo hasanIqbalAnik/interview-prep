@@ -116,7 +116,7 @@ class LinkedList:
             slow_pointer = slow_pointer._next
 
         slow_prev._next = slow_pointer._next
-        
+
 
     def print_nodes(self):
         """temp is used to make sure head remains at the first position after the traversal"""
