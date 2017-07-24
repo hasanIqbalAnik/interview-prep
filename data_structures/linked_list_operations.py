@@ -24,22 +24,20 @@ class Node:
 class LinkedList:
     def __init__(self):
         self._head = None
-        self._size = 0
+        # could use a size variable, but that omits some algorithmic complexity for measuring the size
 
     def insert(self, elem):
         """creating an element and adding into the linked list head"""
         self._head = Node(elem, self._head)
-        self._size += 1
 
     def delete_first(self, elem):
         """delete the occurrences of elements at the head or right after head positions"""
-        if self._size == 0:
+        if not self._head:
             raise Exception('unable to delete form an empty list')
 
         while self._head:
             if self._head._elem == elem:
                 self._head = self._head._next
-                self._size -= 1
             else:
                 break
 
@@ -53,13 +51,12 @@ class LinkedList:
             if current._elem == elem:
                 prev._next = current._next
                 current = prev._next
-                self._size -= 1
             else:
                 prev = current
                 current = current._next
 
     def reverse_nodes(self):
-        """reverse the whole list"""
+        """reverse the whole list."""
         current = self._head
         prev = None
         while current:
@@ -70,7 +67,10 @@ class LinkedList:
         self._head = prev  # restore the head
 
     def detect_loop(self):
-        """check whether any circular reference exists in any part of the chain"""
+        """check whether any circular reference exists in any part of the chain.
+        the fast pointer is advanced two nodes at a time. if at any point these two pointers meet, then
+        there is a loop. we can keep track of the previous node of the slow pointer to remove
+        the loop by setting it's next to none. """
         slow_pointer, fast_pointer = self._head, self._head
         slow_prev = slow_pointer
         while slow_pointer and fast_pointer and fast_pointer._next:  # if there isn't a loop, fast pointer would be None
@@ -101,6 +101,23 @@ class LinkedList:
         self._head = current._next  # replace the head with the current's next value
         current._next = None  # set the current's next value to null, thus breaking the loop
 
+    def delete_middle(self):
+        """if there are n nodes in the list, delete the n/2 th node. if n is even, delete the second of the
+        two middle nodes. the obvious solution is to traverse the list and measuring the size.
+        this requires n + n/2 number of loop execution. however, this can be done in
+        n/2 iteration only. the idea is to use two pointers. one slow and one fast.
+        if the fast pointer is advanced two nodes each time, by the time it reaches the
+        end, the slow pointer would be at the middle element. """
+
+        slow_pointer, fast_pointer, slow_prev = self._head, self._head, None
+        while fast_pointer and fast_pointer._next:
+            fast_pointer = fast_pointer._next._next
+            slow_prev = slow_pointer
+            slow_pointer = slow_pointer._next
+
+        slow_prev._next = slow_pointer._next
+        
+
     def print_nodes(self):
         """temp is used to make sure head remains at the first position after the traversal"""
         temp = self._head
@@ -118,12 +135,14 @@ if __name__ == '__main__':
     nd3 = Node(3, None)
     nd4 = Node(4, None)
     nd5 = Node(5, None)
+    nd6 = Node(6, None)
     nd1._next = nd2
     nd2._next = nd3
     nd3._next = nd4
     nd4._next = nd5
+    nd5._next = nd6
 
     ll._head = nd1
     ll.print_nodes()
-    ll.rotate_list(1)
+    ll.delete_middle()
     ll.print_nodes()
