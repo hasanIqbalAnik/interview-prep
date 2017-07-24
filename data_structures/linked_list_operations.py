@@ -86,10 +86,20 @@ class LinkedList:
         if loop_node:
             loop_node._next = None
 
-
     def rotate_list(self, k):
-        """rotate the linked list k times to the right"""
-        raise NotImplemented
+        if not self._head or not self._head._next or k == 0:
+            return self._head
+
+        current, count = self._head, 1
+        while current._next:  # measure the length of the total list
+            count += 1
+            current = current._next
+        current._next = self._head  # establish the circular relation, tail is now pointing to head
+        k = k % count  # k can be very big, it must not exceed the length of the chain
+        for i in xrange(count - k):
+            current = current._next  # place the current pointer to just before the new head
+        self._head = current._next  # replace the head with the current's next value
+        current._next = None  # set the current's next value to null, thus breaking the loop
 
     def print_nodes(self):
         """temp is used to make sure head remains at the first position after the traversal"""
@@ -100,16 +110,20 @@ class LinkedList:
         print
 
 
-# create some nodes with circular references 1->2->3->1
-ll = LinkedList()
-nd1 = Node(1, None)
-nd2 = Node(2, None)
-nd3 = Node(3, nd1)
-nd2._next = nd3
-nd1._next = nd2
+if __name__ == '__main__':
+    ll = LinkedList()
 
-ll._head = nd1
-ll.print_nodes()
-ll.remove_loop()
-ll.print_nodes()
+    nd1 = Node(1, None)
+    nd2 = Node(2, None)
+    nd3 = Node(3, None)
+    nd4 = Node(4, None)
+    nd5 = Node(5, None)
+    nd1._next = nd2
+    nd2._next = nd3
+    nd3._next = nd4
+    nd4._next = nd5
 
+    ll._head = nd1
+    ll.print_nodes()
+    ll.rotate_list(1)
+    ll.print_nodes()
