@@ -42,7 +42,11 @@ class LinkedList:
                 break
 
     def delete_all(self, elem):
-        """delete all occurrence of given element"""
+        """
+        delete all occurrence of given element
+        if the list is: 2, 1, 2, 2, 3, 4, 5, 2 -> 1, 3, 4, 5
+
+        """
 
         self.delete_first(elem)  # delete any occurrence at the head
 
@@ -129,20 +133,16 @@ class LinkedList:
 
 if __name__ == '__main__':
     ll = LinkedList()
+    ll.insert(2)
+    ll.insert(5)
+    ll.insert(4)
+    ll.insert(3)
+    ll.insert(2)
+    ll.insert(2)
+    ll.insert(1)
+    ll.insert(2)
 
-    nd1 = Node(1, None)
-    nd2 = Node(2, None)
-    nd3 = Node(3, None)
-    nd4 = Node(4, None)
-    nd5 = Node(5, None)
-    nd6 = Node(6, None)
-    nd1._next = nd2
-    nd2._next = nd3
-    nd3._next = nd4
-    nd4._next = nd5
-    nd5._next = nd6
-
-    ll._head = nd1
     ll.print_nodes()
-    ll.delete_middle()
+    ll.delete_all(2)
     ll.print_nodes()
+    #2, 1, 2, 2, 3, 4, 5, 2
