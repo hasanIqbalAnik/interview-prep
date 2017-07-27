@@ -4,8 +4,10 @@ Applications of a trie:
 1. instant searches
 2. small alphabet with lots of redundancy in words, like stems.
 3. efficient lookup and insertion
+4. no collision like in hash
 
-however, it does suffer from memory overhead.
+however, it does suffer from memory overhead. space complexity is O(n * k * l) where,
+n is the number of keys, k is the maximum length of a key and l is the size of alphabet.
 
 construction:
 a node class, consisting of a boolean value, representing whether this is the terminal node of a
@@ -46,7 +48,8 @@ class Trie:
         for i in range(len(word)):
             if word[i] in current_root.children:  # change the root, move down the tree
                 current_root = current_root.children[word[i]]
-                if i == word_length -1 and not current_root.terminal:
+                if i == word_length -1 and not current_root.terminal: # if this is the last character and its
+                    #  not the terminal node
                     return False
             else:
                 return False
@@ -55,11 +58,18 @@ class Trie:
 
 # todo deletion
 
-trie = Trie()
-trie.insert('asdf')
-trie.insert('asdg')
-trie.insert('world')
-trie.insert('peace')
 
+
+trie = Trie()
+trie.insert('act')
+trie.insert('acid')
+trie.insert('acid')
+trie.insert('bell')
+trie.insert('belt')
+trie.insert('bed')
+trie.insert('cat')
+trie.insert('cap')
+
+print trie
 
 

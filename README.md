@@ -37,6 +37,8 @@
     * detect loop 
     * remove loop 
     * rotating
+* Trie construction and insertion
+* Hash Table construction, insertion and search
 
 #### Graph Algorithms
 * Dijkastra's single source shortest path algorithm

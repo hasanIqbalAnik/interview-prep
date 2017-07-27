@@ -18,7 +18,7 @@ Time Complexity: O(E * V) -> where E is the number of edges, V is the number of 
 
 
 from graph import adj_mtx, AP
-import heapq as hq
+import heapq as hq  # python priority queue implementation
 
 
 # todo correct runtime analysis
