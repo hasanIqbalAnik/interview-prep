@@ -20,7 +20,15 @@ a, b = BitArray(0), bitarray(0)
 print 'size of a', sys.getsizeof(a), ' ', 'sizeof b: ', sys.getsizeof(b)
 # outputs 56, 112 as their respective size
 
-In these manipulation tasks, we will be using BitArray.
+In these manipulation tasks, we will be using BitArray. These operations in decimal format
+is a hell lot easier to understand and perform. It's just about practicing with BitArray.
+
+for example:
+
+check ith bit: 5 & (1 << 3)  => produces 0
+turn ith bit on: 5 | (1 << 3)
+and so on. 
+
 
 Reference: Programming Contest: Data Structure and Algorithms by Md. Mahbubul Hasan
 """
