@@ -46,3 +46,6 @@
 * Cycle detection in directed graph
 * Topological sort
 
+
+#### General Concepts
+* Bit Manipulation (ith bit check/on/off/toggle/, keep last k bits and set all others 0)
