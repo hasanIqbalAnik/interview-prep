@@ -68,11 +68,14 @@ class HashTable:
                 return item[1]
         return 'item not found'
 
-ht = HashTable()
-ht.insert('Russia', 17098246)
-ht.insert('Canada', 9984670)
-ht.insert('China', 9572900)
-ht.insert('USA', 9525067)
-ht.insert('Brazil', 8515767)
 
-print ht.search('Brazil')
+if __name__=='__main__':
+    
+    ht = HashTable()
+    ht.insert('Russia', 17098246)
+    ht.insert('Canada', 9984670)
+    ht.insert('China', 9572900)
+    ht.insert('USA', 9525067)
+    ht.insert('Brazil', 8515767)
+
+    print ht.search('Brazil')
