@@ -49,3 +49,4 @@
 
 #### General Concepts
 * Bit Manipulation (ith bit check/on/off/toggle/, keep last k bits and set all others 0)
+* Design Patterns (Factory, Facade, Singleton)
