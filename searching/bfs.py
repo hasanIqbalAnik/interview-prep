@@ -9,6 +9,7 @@ adj_lst = {
     7: [2, 3, 5]
 }
 
+
 def bfs(q, adj_lst):
     """
 	Breadth First Search:

@@ -2,11 +2,11 @@ def lis_dp(array):
     """
     find out the longest increasing subsequence using the following algorithm:
 
-    initialize an array LIS with 1s to hold the increasing subsequence lengths at each of the array positions.
-    use two pointers i and j. i goes from 0 to len(array)-1. j goes from 0 to i.
-    in each of these cases, check whether the value at array[j] is less than array[i]. if it is, then we have found a
-    partial increasing subsequence. check whether the LIS value stored in the position J and add one with it is greater than the value
-    stored in the LIS position i. Else, we have to increase the value of index i and proceed to the next iteration.
+    initialize an array LIS with 1s to hold the increasing subsequence lengths at each of the array positions. use
+    two pointers i and j. i goes from 0 to len(array)-1. j goes from 0 to i. in each of these cases, check whether
+    the value at array[j] is less than array[i]. if it is, then we have found a partial increasing subsequence. check
+    whether the LIS value stored in the position J and add one with it is greater than the value stored in the LIS
+    position i. Else, we have to increase the value of index i and proceed to the next iteration.
 
     time complexity: O(n^2), space complexity O(n).
 

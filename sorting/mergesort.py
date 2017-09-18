@@ -49,4 +49,5 @@ def mergesort(array):
     return merge(left, right)
 
 
-print mergesort([3, 5, 1, 100, 500, 3, 4, 5, 6, 9, 2, 9])
+# print mergesort([3, 5, 1, 100,500, 3, 4, 5, 6, 9, 2, 9])
+print mergesort([3, 5, 1, 9])

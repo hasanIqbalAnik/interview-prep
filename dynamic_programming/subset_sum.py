@@ -4,6 +4,8 @@ def subset_sum_dp(elements, target):
     any combination of the array elements. However, the brute force approach takes O(2^n) time. This dp
     approach takes O(mn) time with O(mn) space complexity. It can't work on negative numbers.
 
+    the rows corresponds to elements, the columns for targets from 0->target
+
     :param elements: array of numbers
     :param target: the number to find
     :return: True if, target can be obtained, else False
@@ -45,12 +47,12 @@ def subset_sum_recursive(array, target, n):
         return False
     if n < 0:
         return False
-    return subset_sum_recursive(array, target-array[n], n-1) or subset_sum_recursive(array, target, n-1)
+    return subset_sum_recursive(array, target - array[n], n - 1) or subset_sum_recursive(array, target, n - 1)
 
 
-# a = [1, 3, 9, 2]
-a = [3, 4, 5, 2, 5, 5, 29, 100]
+a = [1, 3, 9, 2]
+# a = [3, 4, 5, 2, 5, 5, 29, 100]
+print subset_sum_dp(a, 4)
 
-
-print subset_sum_dp(a, 34)
+# print subset_sum_dp(a, 34)
 # print subset_sum_recursive(a, 8, len(a)-1)
